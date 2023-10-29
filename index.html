@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>iPhone 15 Pro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* nav: */
+        .fixed-top {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 1030;
+        }
+
+        .bg-dark {
+            background-color: #343a40 !important;
+        }
+
+        .navbar > .container, .navbar > .container-fluid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .navbar > .container, .navbar > .container-fluid {
+                display: flex;
+                flex-direction: column;
+                text-align: left;
+            }
+        }
+
+        .container {
+            width: 100%;
+            /*padding-right: 15px;*/
+            /*padding-left: 15px;*/
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .navbar-dark .navbar-brand {
+            color: #fff;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .navbar-dark .navbar-brand {
+                margin-right: 200px;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            .navbar-expand-lg .navbar-nav {
+                margin-right: 200px;
+            }
+        }
+
+        .navbar-brand {
+            display: inline-block;
+            padding-top: 0.3125rem;
+            padding-bottom: 0.3125rem;
+            margin-right: 1rem;
+            font-size: 1.25rem;
+            line-height: inherit;
+            white-space: nowrap;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            background-color: transparent;
+        }
+
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-collapse {
+                display: -ms-flexbox !important;
+                display: flex !important;
+                -ms-flex-preferred-size: auto;
+                flex-basis: auto;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .navbar-expand-lg .navbar-nav {
+                -ms-flex-direction: row;
+                flex-direction: row;
+            }
+        }
+
+        .ml-auto, .mx-auto {
+            margin-left: auto !important;
+        }
+
+        .navbar-nav {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0;
+            margin-bottom: 0;
+            list-style: none;
+        }
+
+        dl, ol, ul {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, .5);
+            margin-left: 10px;
+        }
+
+        .navbar-expand-lg .navbar-nav {
+            -ms-flex-direction: row;
+            flex-direction: row;
+        }
+
+        /*header*/
+        .text-white {
+            color: #fff !important;
+        }
+
+        .bg-danger {
+            background-color: #dc3545 !important;
+        }
+
+        header {
+            padding: 63px 0 0px;
+        }
+
+        .text-center {
+            text-align: center !important;
+        }
+
+        h1 {
+            text-shadow: 1px 1px 1px #66644d, 2px 2px 1px #000, 3px 3px 1px #000, 4px 4px 1px #000, 5px 5px 1px #000, 6px 6px 1px #000, 7px 7px 1px #000, 8px 8px 1px #000;
+            -webkit-transform: skewY(0deg);
+            -moz-transform: skewY(0deg);
+            transform: skewY(0deg);
+            -webkit-backface-visibility: hidden;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-top: 0;
+        }
+
+        .countdown_text {
+            font-size: 30px;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        section {
+            padding: 35px 0;
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+        .row {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            /*flex-wrap: wrap;*/
+            margin-right: -15px;
+            margin-left: -15px;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .row {
+                display: flex;
+                flex-direction: column;
+                padding: 0 20px;
+                margin: 0 10px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .col-md-5 {
+                -ms-flex: 0 0 41.666667%;
+                flex: 0 0 41.666667%;
+                max-width: 41.666667%;
+            }
+        }
+
+        .gallery {
+            overflow: hidden;
+        }
+
+        .gallery__hero {
+            overflow: hidden;
+            position: relative;
+            margin: 0 0 0.3333333333em;
+        }
+
+        .gallery__hero-enlarge {
+            position: absolute;
+            right: 0.5em;
+            bottom: 0.5em;
+            z-index: 1;
+            width: 30px;
+            height: 30px;
+            opacity: 0.5;
+            background-image: url(data:image/svg+xml; base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iNS4wIC0xMC4wIDEwMC4wIDEzNS4wIiBmaWxsPSIjMzRCZjQ5Ij48cGF0aCBkPSJNOTMuNTkzIDg2LjgxNkw3Ny4wNDUgNzAuMjY4YzUuNDEzLTYuODczIDguNjQyLTE1LjUyNiA4LjY0Mi0yNC45MTRDODUuNjg3IDIzLjEwNCA2Ny41OTMgNSA0NS4zNDMgNVM1IDIzLjEwNCA1IDQ1LjM1NGMwIDIyLjI0IDE4LjA5NCA0MC4zNDMgNDAuMzQzIDQwLjM0MyA5LjQgMCAxOC4wNjItMy4yNCAyNC45MjQtOC42NTNsMTYuNTUgMTYuNTZjLjkzNy45MjcgMi4xNjIgMS4zOTYgMy4zODggMS4zOTYgMS4yMjUgMCAyLjQ1LS40NyAzLjM5LTEuMzk2IDEuODc0LTEuODc1IDEuODc0LTQuOTEyLS4wMDItNi43ODh6bS00OC4yNS0xMC43MWMtMTYuOTU0IDAtMzAuNzUzLTEzLjc5OC0zMC43NTMtMzAuNzUyIDAtMTYuOTY0IDEzLjgtMzAuNzY0IDMwLjc1My0zMC43NjQgMTYuOTY0IDAgMzAuNzUzIDEzLjggMzAuNzUzIDMwLjc2NCAwIDE2Ljk1NC0xMy43ODggMzAuNzUzLTMwLjc1MyAzMC43NTN6TTYzLjAzMiA0NS4zNTRjMCAyLjM0NC0xLjkwNyA0LjI2Mi00LjI2MiA0LjI2MmgtOS4xNjR2OS4xNjRjMCAyLjM0NC0xLjkwNyA0LjI2Mi00LjI2MiA0LjI2Mi0yLjM1NSAwLTQuMjYyLTEuOTE4LTQuMjYyLTQuMjYydi05LjE2NGgtOS4xNjRjLTIuMzU1IDAtNC4yNjItMS45MTgtNC4yNjItNC4yNjIgMC0yLjM1NSAxLjkwNy00LjI2MiA0LjI2Mi00LjI2Mmg5LjE2NHYtOS4xNzVjMC0yLjM0NCAxLjkwNy00LjI2MiA0LjI2Mi00LjI2MiAyLjM1NSAwIDQuMjYyIDEuOTE4IDQuMjYyIDQuMjYydjkuMTc1aDkuMTY0YzIuMzU1IDAgNC4yNjIgMS45MDcgNC4yNjIgNC4yNjJ6Ii8+PC9zdmc+);
+            background-repeat: no-repeat;
+            transition: opacity 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        }
+
+        .ir {
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+            background-color: transparent;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        img {
+            vertical-align: middle;
+            border-style: none;
+        }
+
+        .gallery__thumbs {
+            text-align: center;
+            background: transparent;
+        }
+
+        .gallery__thumbs a.is-active {
+            opacity: 0.2;
+        }
+
+        .gallery__thumbs {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .is-active {
+            width: 3.5rem;
+            cursor: pointer;
+            border-radius: 0.25rem;
+            margin-left: 0.375rem;
+        }
+
+        .gallery__thumbs a {
+            display: inline-block;
+            width: 20%;
+            padding: 0.5em;
+            opacity: 0.75;
+            transition: opacity 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+        }
+
+        .gallery__thumbs {
+            text-align: center;
+            background: transparent;
+        }
+
+        /*center-main*/
+        @media (min-width: 768px) {
+            .col-md-3 {
+                -ms-flex: 0 0 25%;
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+            position: relative;
+            width: 100%;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .details-wrap {
+            font-size: 13px;
+        }
+
+        .counter {
+            color: #00a900;
+        }
+
+        .details-wrap {
+            font-size: 13px;
+        }
+
+        h3 {
+            font-size: 1.75rem;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .review-wrap {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .fa-solid, .fas {
+            font-weight: 900;
+        }
+
+        .fa-classic, .fa-regular, .fa-solid, .far, .fas {
+            font-family: "Font Awesome 6 Free";
+        }
+
+        .fa, .fa-brands, .fa-classic, .fa-regular, .fa-sharp, .fa-solid, .fab, .far, .fas {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            display: var(--fa-display, inline-block);
+            font-style: normal;
+            font-variant: normal;
+            line-height: 1;
+            text-rendering: auto;
+        }
+
+        .fa-star:before {
+            content: "\f005";
+        }
+
+        .reviews {
+            margin-left: auto;
+            margin-inline-start: auto;
+            -webkit-margin-start: auto;
+            -moz-margin-start: auto;
+            text-align: end;
+            line-height: 1;
+            color: #0066c0;
+        }
+
+        .table-wrap {
+            display: flex;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table {
+            display: table;
+            border-collapse: separate;
+            box-sizing: border-box;
+            text-indent: initial;
+            border-spacing: 2px;
+            border-color: gray;
+        }
+
+        tbody {
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
+        }
+
+        tr {
+            display: table-row;
+            vertical-align: inherit;
+            border-color: inherit;
+        }
+
+        table {
+            border-collapse: separate;
+            text-indent: initial;
+            border-spacing: 2px;
+        }
+
+        .table-wrap td {
+            width: 120px;
+            vertical-align: top;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .table-wrap .price span {
+            font-size: 35px;
+            color: #d21800;
+        }
+
+        .table-wrap td {
+            width: 120px;
+            vertical-align: top;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .save {
+            color: #00a900;
+        }
+
+        .stock {
+            margin: 10px 0;
+            font-size: 24px;
+            color: #d21800;
+        }
+
+        dl, ol, ul {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .col-md-4 {
+                -ms-flex: 0 0 33.333333%;
+                flex: 0 0 33.333333%;
+                max-width: 33.333333%;
+            }
+        }
+
+        .form-title1 {
+            text-align: center;
+            background: #222e3e;
+        }
+
+        .form-title {
+            padding: 13px 10px;
+            color: #fff;
+            font-weight: 700;
+        }
+
+        h5 {
+            font-size: 1.25rem;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .form-style {
+            background-color: #fff;
+            padding: 20px 20px 20px 20px;
+            border: solid 1px #000;
+        }
+
+        .btn.btn-warning.btn-block {
+            cursor: pointer;
+            text-align: center;
+            border-radius: 8px;
+            line-height: 40px;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        .btn-warning {
+            color: #212529;
+            background-color: #ffc107;
+            border-color: #ffc107;
+        }
+
+        element.style {
+            text-align: center;
+            font-size: 13px;
+            margin-top: 10px;
+        }
+
+        .secure-icons {
+            width: 120px;
+            margin: 0 auto 20px;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        img {
+            vertical-align: middle;
+            border-style: none;
+        }
+
+        button, input, optgroup, select, textarea {
+            margin: 0;
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+        }
+
+        .form-style {
+            background-color: #fff;
+            padding: 20px 20px 20px 20px;
+            border: solid 1px #000;
+        }
+
+        /*  section2*/
+        .bg-black {
+            background-color: #000 !important;
+        }
+
+        section {
+            padding: 35px 0;
+        }
+
+        @media (min-width: 1200px) {
+            .container {
+                max-width: 1140px;
+            }
+        }
+
+        .ml-auto, .mx-auto {
+            margin-left: auto !important;
+        }
+
+        .mr-auto, .mx-auto {
+            margin-right: auto !important;
+        }
+
+        .carousel {
+            position: relative;
+        }
+
+        .carousel-inner {
+            margin-bottom: -35px;
+        }
+
+        .carousel-inner {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel-item {
+            display: none;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0.4;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /*.carousel-item-next, .carousel-item-prev, .carousel-item.active {*/
+        /*    display: block;*/
+        /*}*/
+
+        .w-100 {
+            width: 100% !important;
+        }
+
+        .d-block {
+            display: block !important;
+        }
+
+        /*    section3*/
+        @media (min-width: 768px) {
+            .col-md-8 {
+                -ms-flex: 0 0 66.666667%;
+                flex: 0 0 66.666667%;
+                max-width: 66.666667%;
+            }
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        p {
+            display: block;
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+        }
+
+        hr {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            border: 0;
+            border-top: 1px solid rgba(0, 0, 0, .1);
+        }
+
+        .float-right {
+            float: right !important;
+        }
+    </style>
+    <!--    <script>-->
+    <!--        /* Language Redirect */-->
+    <!--        var pth = window.location.pathname;-->
+    <!--        var pg = pth.split("/").pop();-->
+    <!--        var glng = navigator.language || navigator.userLanguage;-->
+    <!--        var lng = glng.split("-")[0].toLowerCase();-->
+    <!--        var qry = window.location.search;-->
+
+    <!--        switch (lng) {-->
+    <!--            case 'es':-->
+    <!--                pfx = '_es';-->
+    <!--                break;-->
+    <!--            case 'de':-->
+    <!--                pfx = '_de';-->
+    <!--                break;-->
+    <!--            case 'fr':-->
+    <!--                pfx = '_fr';-->
+    <!--                break;-->
+    <!--            case 'it':-->
+    <!--                pfx = '_it';-->
+    <!--                break;-->
+    <!--            case 'ja':-->
+    <!--                pfx = '_jp';-->
+    <!--                break;-->
+    <!--            case 'hu':-->
+    <!--                pfx = '_hu';-->
+    <!--                break;-->
+    <!--            default:-->
+    <!--                pfx = '';-->
+    <!--        }-->
+
+    <!--        if (pg === 'index.html' && pfx !== '') {-->
+    <!--            window.top.location = 'https://centralprize.com/iphone14pro/index' + pfx + '.html' + qry;-->
+    <!--        }-->
+    <!--    </script>-->
+</head>
+
+<body id="page-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">iPhone 15 Pro</a>
+        <div class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <span class="navbar-toggler-icon"></span>-->
+        </div>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger"
+                       href="https://fastswtrk.com/?a=220140&c=364946&co=276060&mt=4">Overview</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger"
+                       href="https://fastswtrk.com/?a=220140&c=364946&co=276060&mt=4">Tech Specs</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!--header-->
+<header class="bg-danger text-white">
+    <div class="container text-center">
+        <h1>Special Offer</h1>
+        <span>ATTENTION: Due to high media attention, this queue closes in</span>
+        <p class="countdown_text" id="countdown"></p>
+    </div>
+</header>
+
+<!--section1-->
+<section id="main">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="container">
+                    <!-- Gallery -->
+                    <div id="js-gallery" class="gallery">
+                        <div class="gallery__hero">
+                            <a href="" class="gallery__hero-enlarge ir" data-gallery="zoom">Zoom</a>
+                            <img id="image" src="pic/iphone-black.png" alt="" width="80%">
+                        </div>
+                        <div class="gallery__thumbs">
+                            <img src="pic/iphone-black.png" class="is-active" alt="">
+                            <img src="pic/iphone-lan.png" class="is-active" alt="">
+                            <img src="pic/iphone-hui.png" class="is-active" alt="">
+                            <img src="pic/iphone-fen.png" class="is-active" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="details-wrap">
+                    <p>Order within <span class="counter"><span class="minutes">24</span> minutes</span> and get your
+                        iPhone 15 Pro
+                        Pro in 2-3 days</p>
+                    <div class="prod-name">
+                        <h3>iPhone 15 Pro</h3>
+                        <div class="review-wrap">
+                            <div class="stars">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                    class="fas fa-star"><i class="far fa-star"></i></i>
+                            </div>
+                            <div class="reviews">
+                                30+ customer reviews
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table-wrap">
+                        <table>
+                            <tbody>
+                            <tr class="rrp">
+                                <td>RRP:</td>
+                                <td>$999</td>
+                            </tr>
+                            <tr class="price-wrap">
+                                <td>Price:</td>
+                                <td class="price"><span>$2</span>
+                                    <p>FREE Delivery</p>
+                                </td>
+                            </tr>
+                            <tr class="save-wrap">
+                                <td>You Save:</td>
+                                <td class="save">$997</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="stock">
+                        3 in stock
+                    </div>
+                    <div class="info-wrap">
+                        <ul>
+                            <li>Super Retina XDR display</li>
+                            <li> 6.1 inches (diagonal) OLED edge-to-edge screen</li>
+                            <li>2556 x 1179 pixel resolution, 460 ppi</li>
+                            <li>The iPhone 15 Pro display features gracefully curved corners, with all four corners
+                                located within a standard rectangle. When measured as a standard rectangle, the screen
+                                has a diagonal length of 6.12 inches (actual viewable area is smaller).
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-title form-title1">
+                    <h5>Where should we send your iPhone?</h5>
+                </div>
+
+                <form id="page_form" class="form-style" action="https://a.juksr.net/index.php"
+                      method="GET">
+                    <a class="btn btn-warning btn-block" href="https://fastswtrk.com/?a=220140&c=364946&co=276060&mt=4">
+                        <b>Continue</b>
+                    </a>
+                    <p style="text-align: center; font-size: 13px; margin-top:10px;">You will be redirected to our
+                        secure
+                        gateway</p>
+                    <div class="secure-icons">
+                        <img src="pic/ssl.png" alt="">
+                    </div>
+                    <input type="hidden" name="productId" value="1">
+                    <input type="hidden" name="lp" value="1">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--section2-->
+<section id="services" class="bg-black">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mx-auto">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item fade">
+                            <img class="d-block w-100" src="pic/banner-1.jpg" alt="First slide">
+                        </div>
+                        <div class="carousel-item fade">
+                            <img class="d-block w-100" src="pic/banner-3.jpg" alt="Third slide">
+                        </div>
+                        <div class="carousel-item fade">
+                            <img class="d-block w-100" src="pic/banner-2.png" alt="Second slide">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--section3 -->
+<section id="content2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2>iPhone 15 Pro</h2>
+                <h3>It’s a leap year.</h3>
+                <p>A16 Bionic. All‑new design. Ceramic Shield.
+                    LiDAR Scanner. A Pro camera system optimized for
+                    low light — and pushed even further on iPhone 15 Pro Max.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="pic/all.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr>
+<!-- Footer -->
+<footer class="container">
+    <div class="float-right"><a href="https://fastswtrk.com/?a=220140&c=364946&co=276060&mt=4">Back to top</a></div>
+    <p>© 2022 dealvibe.net · <a href="https://fastswtrk.com/?a=220140&c=364946&co=276060&mt=4" data-toggle="modal"
+                                data-target="#privacy">Privacy</a>
+        <a href="https://fastswtrk.com/?a=220140&c=364946&co=276060&mt=4" data-toggle="modal"
+           data-target="#terms">Terms</a>
+        · <a href="https://dealvibe.net/affiliates/" target="blank"> </a></p>
+</footer>
+
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date();
+    countDownDate.setHours(countDownDate.getHours() + 4);
+    countDownDate = countDownDate.getTime();
+
+    // Update the count down every 1 second
+    var x = setInterval(function () {
+
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Display the result in the element with id="demo"
+        document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("countdown").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+
+    //iphone手机图片切换
+    document.addEventListener("DOMContentLoaded", function () {
+        const mainImage = document.getElementById("image");
+        const thumbnails = document.querySelectorAll(".is-active");
+        let currentIndex = 0;
+
+        function updateImage(index) {
+            mainImage.src = thumbnails[index].src;
+        }
+
+        thumbnails.forEach((thumbnail, index) => {
+            thumbnail.addEventListener("click", () => {
+                updateImage(index);
+            });
+        });
+
+        updateImage(currentIndex);
+    });
+
+    //图片轮播
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        const slides = document.getElementsByClassName("carousel-item");
+
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+
+        slideIndex++;
+        if (slideIndex > slides.length) {
+            slideIndex = 1;
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+
+        setTimeout(showSlides, 3000); // 切换图片间隔时间：3秒
+    }
+</script>
+
+<script>
+
+</script>
+
+</body>
+
+</html>
